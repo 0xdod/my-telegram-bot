@@ -18,7 +18,7 @@ app.post('/new-message', (req, res) => {
 
 	axios
 		.post(
-			'https://api.telegram.org/bot1639727523:AAFfFGn9gHFW5JjFqcZZKUDPMkZT6chZ2KI',
+			'https://api.telegram.org/bot1639727523:AAFfFGn9gHFW5JjFqcZZKUDPMkZT6chZ2KI/sendMessage',
 			{
 				chat_id: message.chat.id,
 				text: genInsult(),
