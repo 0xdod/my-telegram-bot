@@ -14,7 +14,7 @@ app.post('/new-message', (req, res) => {
 
 	let messageBody = message.text.toLowerCase() || '';
 
-	if (!message || messageBody.indexOf('shakespeare') < 0) {
+	if (!message) {
 		return res.end();
 	}
 
