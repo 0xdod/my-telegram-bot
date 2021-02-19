@@ -12,18 +12,18 @@ app.use(express.urlencoded({ extended: true }));
 app.post('/new-message', (req, res) => {
 	const { message } = req.body;
 
-	let messageBody = message.text.toLowerCase() || ''
+	let messageBody = message.text.toLowerCase() || '';
 
 	if (!message || messageBody.indexOf('shakespeare') < 0) {
 		return res.end();
 	}
 
-	var text = ''
+	var text = '';
 
 	if (messageBody.includes('shakespeare')) {
-		text = genInsult(),
-	}else {
-		text = "Macbeth says you're mad?\nFollow simple instruction!."
+		text = genInsult();
+	} else {
+		text = "Macbeth says you're mad?\nFollow simple instruction!.";
 	}
 
 	axios
