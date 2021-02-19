@@ -12,8 +12,18 @@ app.use(express.urlencoded({ extended: true }));
 app.post('/new-message', (req, res) => {
 	const { message } = req.body;
 
-	if (!message || message.text.toLowerCase().indexOf('shakespeare') < 0) {
+	let messageBody = message.text.toLowerCase() || ''
+
+	if (!message || messageBody.indexOf('shakespeare') < 0) {
 		return res.end();
+	}
+
+	var text = ''
+
+	if (messageBody.includes('shakespeare')) {
+		text = genInsult(),
+	}else {
+		text = "Macbeth says you're mad?\nFollow simple instruction!."
 	}
 
 	axios
@@ -21,7 +31,7 @@ app.post('/new-message', (req, res) => {
 			'https://api.telegram.org/bot1639727523:AAFfFGn9gHFW5JjFqcZZKUDPMkZT6chZ2KI/sendMessage',
 			{
 				chat_id: message.chat.id,
-				text: genInsult(),
+				text,
 			}
 		)
 		.then(response => {
