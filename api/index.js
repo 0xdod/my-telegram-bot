@@ -23,7 +23,8 @@ app.post('/new-message', (req, res) => {
 	if (messageBody.includes('shakespeare')) {
 		text = genInsult();
 	} else {
-		text = "Macbeth says you're mad?\nFollow simple instruction!.";
+		text =
+			"Macbeth and damilola says you're mad ni?!!\nFollow simple instruction!.";
 	}
 
 	axios
