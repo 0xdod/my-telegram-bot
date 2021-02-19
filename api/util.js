@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { firstColumn, secondColumn, thirdColumn } = require('../insults.json');
+const { firstColumn, secondColumn, thirdColumn } = require('./insults.json');
 
 // const prefix = [
 //   "Ah, I see you're here now",
